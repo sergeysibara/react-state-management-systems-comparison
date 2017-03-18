@@ -2412,6 +2412,8 @@ webpackJsonp([0],[
 	
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 	
+	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+	
 	var _react = __webpack_require__(1);
 	
 	var _react2 = _interopRequireDefault(_react);
@@ -2438,11 +2440,11 @@ webpackJsonp([0],[
 	
 	    switch (action.type) {
 	        case ActionTypes.increment:
-	            return Object.assign(state, { count: state.count + 1 });
+	            return _extends({}, state, { count: state.count + 1 });
 	        case ActionTypes.decrement:
-	            return Object.assign(state, { count: state.count - 1 });
+	            return _extends({}, state, { count: state.count - 1 });
 	        case ActionTypes.changeBy:
-	            return Object.assign(state, { count: state.count + action.amount });
+	            return _extends({}, state, { count: state.count + action.amount });
 	        default:
 	            return state;
 	    }

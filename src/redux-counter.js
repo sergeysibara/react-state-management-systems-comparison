@@ -10,11 +10,11 @@ let ActionTypes = {
 let counterReducer = (state = {count:0, amount:0}, action) => {
     switch (action.type) {
         case ActionTypes.increment:
-            return Object.assign(state, {count: state.count + 1});
+            return {...state, count: state.count + 1};
         case ActionTypes.decrement:
-            return Object.assign(state, {count: state.count - 1});
+            return {...state, count: state.count - 1};
         case ActionTypes.changeBy:
-            return Object.assign(state, {count: state.count + action.amount});
+            return {...state, count: state.count + action.amount};
         default:
             return state;
     }
