@@ -4,10 +4,10 @@ import mobxReact, {observer} from 'mobx-react';
 
 let sampleArray = mobx.observable(["Matt", "Kelly"]);
 
-let ListView = observer(function ListView() {
+let ListView = observer(({list})=> {
         return (
             <ul>
-                {this.props.list.map((item) =>
+                {list.map((item) =>
                     <div key={item}>{item}</div>
                 )}
             </ul>

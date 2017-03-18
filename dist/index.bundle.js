@@ -2435,11 +2435,13 @@ webpackJsonp([0],[
 	
 	var sampleArray = _mobx2.default.observable(["Matt", "Kelly"]);
 	
-	var ListView = (0, _mobxReact.observer)(function ListView() {
+	var ListView = (0, _mobxReact.observer)(function (_ref) {
+	    var list = _ref.list;
+	
 	    return _react2.default.createElement(
 	        'ul',
 	        null,
-	        this.props.list.map(function (item) {
+	        list.map(function (item) {
 	            return _react2.default.createElement(
 	                'div',
 	                { key: item },
