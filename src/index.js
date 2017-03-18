@@ -5,7 +5,6 @@ import RefluxCounter from 'reflux-counter'
 import UIStateCounter from 'uistates-counter'
 import RefluxCounterWithoutActions from 'reflux-counter-without-actions'
 
-
 ReactDOM.render(
     <div>
         <RefluxCounter/>
@@ -15,3 +14,19 @@ ReactDOM.render(
     ,
     document.getElementById('react-root')
 );
+
+
+
+import ReduxCounter, {reduxStore} from 'redux-counter'
+
+const reduxAppRender = () =>
+    ReactDOM.render(
+    <div>
+        <ReduxCounter/>
+    </div>
+    ,
+    document.getElementById('react-redux-root')
+);
+
+reduxAppRender();
+reduxStore.subscribe(reduxAppRender);
