@@ -1,5 +1,5 @@
 import React from 'react'
-import {DefaultStore, DefaultUIState} from 'ui-states'
+import {DefaultStore, DefaultUIState, Utils} from 'ui-states'
 
 const CounterStore = new DefaultStore("counter");
 CounterStore.update({count: 0});
@@ -17,16 +17,21 @@ function changeBy(amount) {
 }
 
 export default class Counter extends React.Component {
+    state = CounterStore.getModelClone();
+
     componentWillMount() {
-        this.uiState = new DefaultUIState(this, null, [{store: CounterStore}]);
+        this.id = Utils.Other.createGuid();
+        CounterStore.subscribe(this.id, () => {
+            this.setState(CounterStore.getModelClone())
+        })
     }
 
     componentWillUnmount() {
-        this.uiState.removeState();
+        CounterStore.unSubscribe(this.id);
     }
 
     render() {
-        return <div>{'uistates counter: ' + this.uiState.get('counter.count')}</div>;
+        return <div>{'uistates counter without uistates (with direct subscribe/unSubscribe to stores): ' + this.state.count}</div>;
     }
 }
 

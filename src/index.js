@@ -2,14 +2,18 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 
 import RefluxCounter from 'reflux-counter'
-import UIStateCounter from 'uistates-counter'
 import RefluxCounterWithoutActions from 'reflux-counter-without-actions'
+import UIStatesCounter from 'uistates-counter'
+import UIStatesCounterWithoutUIStates from 'uistates-counter-without-uistates'
+import MobxCounter from 'mobx-counter'
 
 ReactDOM.render(
     <div>
         <RefluxCounter/>
-        <UIStateCounter/>
         <RefluxCounterWithoutActions/>
+        <UIStatesCounter/>
+        <UIStatesCounterWithoutUIStates/>
+        <MobxCounter/>
     </div>
     ,
     document.getElementById('react-root')

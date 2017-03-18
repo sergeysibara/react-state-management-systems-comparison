@@ -1,7 +1,7 @@
 import React from 'react'
 import Reflux from 'reflux'
 
-var Actions = Reflux.createActions([
+let Actions = Reflux.createActions([
     'increment',
     'decrement',
     'changeBy'
@@ -34,7 +34,7 @@ export default class Counter extends Reflux.Component {
     }
 
     render() {
-        return <div>{this.state.count}</div>;
+        return <div>{'reflux counter: ' + this.state.count}</div>;
     }
 }
 
