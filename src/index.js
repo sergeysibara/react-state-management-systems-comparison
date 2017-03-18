@@ -1,9 +1,9 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 
-import RefluxCounter from 'reflux-counter'
-import UIStateCounter from 'uistates-counter'
-import RefluxCounterWithoutActions from 'reflux-counter-without-actions'
+// import RefluxCounter from 'reflux-counter'
+// import UIStateCounter from 'uistates-counter'
+// import RefluxCounterWithoutActions from 'reflux-counter-without-actions'
 
 // ReactDOM.render(
 //     <div>
@@ -32,9 +32,9 @@ import RefluxCounterWithoutActions from 'reflux-counter-without-actions'
 // reduxStore.subscribe(reduxAppRender);
 
 
-import ListView, {sampleArray} from 'mobx-counter'
-
+import TodoListView, {mobxStore} from 'mobx-counter'
 ReactDOM.render(
-    <ListView list = {sampleArray}/>,
+    <TodoListView todoList={mobxStore}/>
+    ,
     document.getElementById('react-mobx-root')
 );
