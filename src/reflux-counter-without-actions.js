@@ -23,7 +23,7 @@ export default class Counter extends Reflux.Component {
     }
 
     render() {
-        return <div>{this.state.count}</div>;
+        return <div>{'reflux counter without actions: ' + this.state.count}</div>;
     }
 }
 

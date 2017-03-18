@@ -1,6 +1,6 @@
 {
-  "name": "reflux-uistates-comparison",
-  "version": "0.0.1",
+  "name": "react-state-management-systems-comparison",
+  "version": "0.0.6",
   "devDependencies": {
     "babel-cli": "^6.23.0",
     "babel-loader": "^6.3.2",

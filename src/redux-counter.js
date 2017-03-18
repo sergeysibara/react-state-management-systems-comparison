@@ -1,4 +1,4 @@
-import React, { Component, PropTypes } from 'react'
+import React, { Component } from 'react'
 import { createStore } from 'redux'
 
 let ActionTypes = {
@@ -37,7 +37,7 @@ export default class Counter extends Component {
     }
 
     render() {
-        return <div>{store.getState().count}</div>;
+        return <div>{'redux counter: ' + store.getState().count}</div>;
     }
 }
 
